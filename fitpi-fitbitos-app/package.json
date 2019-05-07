@@ -1,0 +1,26 @@
+{
+  "fitbit": {
+    "appUUID": "29ddfa12-e637-4726-a9c0-89dd794df6c0",
+    "appType": "app",
+    "appDisplayName": "FitPi",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#607d8b",
+    "requestedPermissions": [
+      "access_internet"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson",
+      "gemini"
+    ],
+    "i18n": {
+      "en": {
+        "name": "FitPi"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~3.1.0"
+  }
+}

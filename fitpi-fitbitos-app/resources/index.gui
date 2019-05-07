@@ -1,0 +1,8 @@
+<svg>
+  <rect id="background" />
+   <text x="50%" y="40" font-family="System-Regular" fill="white" font-size="43" font-weight="bold" text-anchor="middle">Room Weather</text>
+   <text x="50%" y="100" font-family="System-Regular" fill="white" font-size="40" font-weight="bold" text-anchor="middle">Temperature</text>
+   <text x="50%" y="150" font-family="System-Regular" fill="white" font-size="40" font-weight="bold" text-anchor="middle" id="temperature">0 degrees</text>
+   <text x="50%" y="200" font-family="System-Regular" fill="white" font-size="40" font-weight="bold" text-anchor="middle">Humidity</text>
+   <text x="50%" y="250" font-family="System-Regular" fill="white" font-size="40" font-weight="bold" text-anchor="middle" id="humidity">0%</text>
+</svg>
