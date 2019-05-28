@@ -1,0 +1,8 @@
+Flask
+flask_restful
+pymongo
+bcrypt
+Flask-APScheduler
+apscheduler
+dataclasses
+requests
