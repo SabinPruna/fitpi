@@ -1,12 +1,13 @@
 {
   "fitbit": {
-    "appUUID": "29ddfa12-e637-4726-a9c0-89dd794df6c0",
+    "appUUID": "f3b04520-6b49-4925-b55e-a05d27245ee0",
     "appType": "app",
-    "appDisplayName": "FitPi",
+    "appDisplayName": "Fitpi",
     "iconFile": "resources/icon.png",
-    "wipeColor": "#607d8b",
+    "wipeColor": "#03a9f4",
     "requestedPermissions": [
-      "access_internet"
+      "access_internet",
+      "run_background"
     ],
     "buildTargets": [
       "higgs",
@@ -15,7 +16,7 @@
     ],
     "i18n": {
       "en": {
-        "name": "FitPi"
+        "name": "Fitpi"
       }
     },
     "defaultLanguage": "en-US"

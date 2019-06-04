@@ -4,3 +4,5 @@ fitpi-weather/config\.ini
 fitpi-budget/web/config\.ini
 
 *.pyc
+
+fitpi-fitbitos-app/package\.json

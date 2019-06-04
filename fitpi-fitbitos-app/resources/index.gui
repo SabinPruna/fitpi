@@ -1,8 +1,153 @@
-<svg>
-  <rect id="background" />
-   <text x="50%" y="40" font-family="System-Regular" fill="white" font-size="43" font-weight="bold" text-anchor="middle">Room Weather</text>
-   <text x="50%" y="100" font-family="System-Regular" fill="white" font-size="40" font-weight="bold" text-anchor="middle">Temperature</text>
-   <text x="50%" y="150" font-family="System-Regular" fill="white" font-size="40" font-weight="bold" text-anchor="middle" id="temperature">0 degrees</text>
-   <text x="50%" y="200" font-family="System-Regular" fill="white" font-size="40" font-weight="bold" text-anchor="middle">Humidity</text>
-   <text x="50%" y="250" font-family="System-Regular" fill="white" font-size="40" font-weight="bold" text-anchor="middle" id="humidity">0%</text>
+<svg id="root">
+  <defs>
+    
+    <symbol id="meal-tile" href="#tile-list-item" class="tile-item" pointer-events="visible">
+      <rect id="task-background" height="100%" width="100%" fill="fb-green"/>
+      <text id="text" class="meal-menu-item" y="60%"/>
+      <rect id="tile-divider-bottom" class="tile-divider-bottom"/>
+      <rect id="meal-detail-button" pointer-events="all" x="0" y="0" width="100%"
+             height="100%-2" opacity="0" />
+    </symbol>   
+    
+    <symbol id="meal-detail-tile" display="none">
+      <text id="meal-detail-calories" class="meal-text" x="20%" y="10%" />
+      <text id="meal-detail-carbs" class="meal-text" x="20%" y="30%" fill="fb-yellow"/>
+      <text id="meal-detail-fat" class="meal-text" x="20%" y="50%" fill="fb-magenta"/>
+      <text id="meal-detail-protein" class="meal-text" x="20%" y="70%"  fill="fb-green"/>
+      <text id="meal-detail-sugar" class="meal-text" x="20%" y="90%"/>
+    </symbol>
+    
+     <symbol id="budget-tile" href="#tile-list-item" class="tile-item" pointer-events="visible">
+      <rect id="task-background" height="100%" width="100%" fill="fb-magenta"/>
+      <text id="text" class="budget-menu-item" y="60%"/>
+      <rect id="tile-divider-bottom" class="tile-divider-bottom"/>
+      <rect id="budget-detail-button" pointer-events="all" x="0" y="0" width="100%"
+             height="100%-2" opacity="0" />
+    </symbol>
+
+     <symbol id="budget-detail-tile" href="#tile-list-item" class="tile-item" pointer-events="visible">
+      <text id="text" class="budget-detail-item" y="60%" fill="fb-magenta"/>
+      <rect id="budget-detail-tile-divider-bottom" class="budget-detail-tile-divider-bottom"/>
+      <rect id="budget-detail-button" pointer-events="all" x="0" y="0" width="100%"
+             height="100%-2" opacity="0" />
+    </symbol>
+
+    <symbol id="worklog-detail-tile" href="#tile-list-item" class="tile-item" pointer-events="visible">
+      <text id="text" class="worklog-detail-item"  y="65%" fill="fb-blue"/>
+      <rect id="worklog-detail-tile-divider-bottom" class="worklog-detail-tile-divider-bottom"/>
+      <rect id="worklog-detail-button" pointer-events="all" x="0" y="0" width="100%"
+             height="100%-2" opacity="0" />
+    </symbol>
+
+    <symbol id="timetable-tile" display="none">
+      <text id="timetable-tile-name" class="timetable-text" x="10%" y="10%" fill="fb-cyan"/>
+      <text id="timetable-tile-teacher" class="timetable-text" x="10%" y="30%" fill="fb-cyan"/>
+      <text id="timetable-tile-type" class="timetable-text" x="10%" y="50%" fill="fb-cyan"/>
+      <text id="timetable-tile-location" class="timetable-text" x="10%" y="70%"  fill="fb-red"/>
+      <text id="timetable-tile-hours" class="timetable-text" x="10%" y="90%" fill="fb-red"/>
+    </symbol>
+
+    
+    <symbol id="weather-tile" display="none">
+      <text x="50%" y="40" font-family="System-Bold" fill="fb-peach" font-size="43" font-weight="bold" text-anchor="middle">Room Weather</text>
+      <text x="50%" y="100" font-family="System-Bold" fill="fb-peach" font-size="40" font-weight="bold" text-anchor="middle">Temperature</text>
+      <text x="50%" y="150" font-family="System-Bold" fill="white" font-size="40" font-weight="bold" text-anchor="middle" id="temperature">0 degrees</text>
+      <text x="50%" y="200" font-family="System-Bold" fill="fb-peach" font-size="40" font-weight="bold" text-anchor="middle">Humidity</text>
+      <text x="50%" y="250" font-family="System-Bold" fill="white" font-size="40" font-weight="bold" text-anchor="middle" id="humidity">0%</text>
+    </symbol>
+
+
+
+  </defs>
+  
+  <use id="meal-list" href="#tile-list" display="none">
+    <var id="reorder-enabled" value="0"/>
+    <use id="meal-0" href="#meal-tile" class="tile-list-item"/>
+    <use id="meal-1" href="#meal-tile" class="tile-list-item"/>
+    <use id="meal-2" href="#meal-tile" class="tile-list-item"/>
+    <use id="meal-3" href="#meal-tile" class="tile-list-item"/>
+    <use id="meal-4" href="#meal-tile" class="tile-list-item"/>
+    <use id="meal-5" href="#meal-tile" class="tile-list-item"/>
+    <use id="meal-6" href="#meal-tile" class="tile-list-item"/>
+    <use id="meal-7" href="#meal-tile" class="tile-list-item"/>
+    <use id="meal-8" href="#meal-tile" class="tile-list-item"/>
+    <use id="meal-9" href="#meal-tile" class="tile-list-item"/>
+  </use>
+
+   <use id="meal-detail" href="#meal-detail-tile" display= "none"/>
+   <use id="timetable-detail" href="#timetable-tile" display= "none"/>
+   <use id="weather-detail" href="#weather-tile" display= "none"/>
+
+   <use id="budget-list" href="#tile-list" display="none">
+    <var id="reorder-enabled" value="0"/>
+    <use id="budget-0" href="#budget-tile" class="budget-tile-list-item"/>
+    <use id="budget-1" href="#budget-tile" class="budget-tile-list-item"/>
+    <use id="budget-2" href="#budget-tile" class="budget-tile-list-item"/>
+    <use id="budget-3" href="#budget-tile" class="budget-tile-list-item"/>
+    <use id="budget-4" href="#budget-tile" class="budget-tile-list-item"/>
+    <use id="budget-5" href="#budget-tile" class="budget-tile-list-item"/>
+  </use>
+  
+  <use id="budget-detail-list" href="#tile-list" display="none">
+    <var id="reorder-enabled" value="0"/>
+    <use id="budget-0" href="#budget-detail-tile" class="tile-list-item"/>
+    <use id="budget-1" href="#budget-detail-tile" class="tile-list-item"/>
+    <use id="budget-2" href="#budget-detail-tile" class="tile-list-item"/>
+    <use id="budget-3" href="#budget-detail-tile" class="tile-list-item"/>
+    <use id="budget-4" href="#budget-detail-tile" class="tile-list-item"/>
+    <use id="budget-5" href="#budget-detail-tile" class="tile-list-item"/>
+    <use id="budget-6" href="#budget-detail-tile" class="tile-list-item"/>
+    <use id="budget-7" href="#budget-detail-tile" class="tile-list-item"/>
+    <use id="budget-8" href="#budget-detail-tile" class="tile-list-item"/>
+    <use id="budget-9" href="#budget-detail-tile" class="tile-list-item"/>
+  </use>
+ 
+  <use id="worklog-detail-list" href="#tile-list" display="none">
+    <var id="reorder-enabled" value="0"/>
+    <use id="worklog-0" href="#worklog-detail-tile" class="worklog-tile-list-item"/>
+    <use id="worklog-1" href="#worklog-detail-tile" class="worklog-tile-list-item"/>
+    <use id="worklog-2" href="#worklog-detail-tile" class="worklog-tile-list-item"/>
+    <use id="worklog-3" href="#worklog-detail-tile" class="worklog-tile-list-item"/>
+    <use id="worklog-4" href="#worklog-detail-tile" class="worklog-tile-list-item"/>
+    <use id="worklog-5" href="#worklog-detail-tile" class="worklog-tile-list-item"/>
+    <use id="worklog-6" href="#worklog-detail-tile" class="worklog-tile-list-item"/>
+    <use id="worklog-7" href="#worklog-detail-tile" class="worklog-tile-list-item"/>
+    <use id="worklog-8" href="#worklog-detail-tile" class="worklog-tile-list-item"/>
+    <use id="worklog-9" href="#worklog-detail-tile" class="worklog-tile-list-item"/>
+  </use>
+   
+  <svg>
+    <defs>
+     <symbol id="menu-tile-item" href="#tile-list-item" focusable="false"
+             pointer-events="none" system-events="all">
+       <text id="text" x="50%" y="70%" text-anchor="middle" />
+       <rect id="tile-divider-bottom" class="tile-divider-bottom" />
+       <rect id="menu-button" pointer-events="all" x="0" y="0" width="100%"
+             height="100%-2" opacity="0" />
+     </symbol>
+    </defs>    
+    <use id="menu-list" href="#tile-list">
+      <var id="separator-height-bottom" value="2" />
+      <use href="#menu-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Nutrition" />
+        <set href="text" attributeName="fill" to="fb-green" />
+      </use>
+      <use href="#menu-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Budget" />
+        <set href="text" attributeName="fill" to="fb-magenta" />
+      </use>
+      <use href="#menu-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Worklog" />
+        <set href="text" attributeName="fill" to="fb-blue" />
+      </use>
+      <use href="#menu-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Timetable" />
+        <set href="text" attributeName="fill" to="fb-cyan" />
+      </use>
+      <use href="#menu-tile-item" class="tile-list-item">
+        <set href="text" attributeName="text-buffer" to="Temperature" />
+        <set href="text" attributeName="fill" to="fb-peach" />
+      </use>
+    </use>   
+   </svg>
 </svg>

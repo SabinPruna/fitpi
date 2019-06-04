@@ -1,8 +1,10 @@
+console.log("Opening Fitpi Settings page");
+
 function mySettings(props) {
   return (
-    <Page>
+   <Page>
       <Section
-        title={<Text bold align="center">Demo Settings</Text>}>
+        title={<Text bold align="center">Background color settings</Text>}>
         <Toggle
           settingsKey="toggle"
           label="Toggle Switch"
