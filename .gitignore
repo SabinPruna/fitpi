@@ -6,3 +6,5 @@ fitpi-budget/web/config\.ini
 *.pyc
 
 fitpi-fitbitos-app/package\.json
+
+fitpi-kivy/\.vscode/settings\.json
