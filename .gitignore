@@ -8,3 +8,9 @@ fitpi-budget/web/config\.ini
 fitpi-fitbitos-app/package\.json
 
 fitpi-kivy/\.vscode/settings\.json
+/fitpi-website/packages
+/fitpi-website/.vs
+/fitpi-website/FP/bin
+/fitpi-website/FP/obj/Debug
+/fitpi-website/FP/fonts
+/fitpi-website/FP/Content
