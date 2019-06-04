@@ -1,2 +1,6 @@
 
 fitpi-weather/config\.ini
+
+fitpi-budget/web/config\.ini
+
+*.pyc
