@@ -1,0 +1,49 @@
+#:kivy 1.0.9
+
+<FitpiDashboard>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        Label:
+            text: "Steps {}".format(root.steps)
+        ProgressBar:
+            id: steps
+            text: "Steps"
+            max: 11000
+            rgbba: 255, 0, 0, 1
+            value: root.steps
+        Label:
+            text: "Calories {}".format(root.calories)
+        ProgressBar:
+            id: calories
+            text: "Calories"
+            max: 4000
+            value: root.calories
+        Label:
+            text: "Distance {}".format(root.distance)
+        ProgressBar:
+            id: distance
+            text: "Distance"
+            max: 8
+            value: root.distance
+        Label:
+            text: "Active Minutes {}".format(root.activeminutes)
+        ProgressBar:
+            id: activeminutes
+            text: "Active Minutes"
+            max: 60
+            value: root.activeminutes
+            thickness : 20
+        Label:
+            text: "Stairs {}".format(root.stairs)
+        ProgressBar:
+            id: stairs
+            text: "Stairs"
+            max: 20
+            value: root.stairs
+        Button:
+            text: "Tweet"
+            on_press: root.send_tweet(root.steps, root.calories, root.distance, root.activeminutes, root.stairs)
+        Button:
+            text: "Refresh"
+            on_press: root.refresh()
